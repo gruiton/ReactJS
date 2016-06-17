@@ -1,0 +1,37 @@
+<html>
+<head>
+	<title>Properties</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script src="https://fb.me/react-0.14.0.js"></script>
+	<script src="https://fb.me/react-dom-0.14.0.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.25/browser.min.js"></script>
+</head>
+<body>
+	<div id="container"></div>
+	<script type="text/babel">
+		var MyComponent = React.createClass({
+			getDefaultProps: function(){
+				return {
+					myString: "Hello World! This must be a String and is Required"
+				}
+			},
+			propTypes: {
+				myString: React.PropTypes.string.isRequired,
+				myArray: React.PropTypes.arrayOf(React.PropTypes.string)
+			},
+			render: function(){
+				return(
+						<div>
+							<h3>my String: {this.props.myString}</h3>
+						</div>
+					)
+			}
+		});
+
+		ReactDOM.render(
+				<MyComponent myArray={["1","2","3"]}/>, 
+				document.getElementById('container')
+			);
+	</script>
+</body>
+</html>

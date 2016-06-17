@@ -51,7 +51,7 @@
 			return (
 					<div>
 						<form onSubmit={this.register}>
-							{this.state.showAlert ? <AlertBox type="danger">Please fill in all fields<AlertBox/> : null}
+							{this.state.showAlert ? <AlertBox type="danger">Please fill in all fields</AlertBox> : null}
 							<div className="form-group">
 								<label htmlFor="firstName">First Name: </label>
 								<input type="text" className="form-control" placeholder="First Name" ref="firstName" />
